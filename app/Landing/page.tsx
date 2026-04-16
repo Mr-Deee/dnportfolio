@@ -490,8 +490,24 @@ export default function LandingPage() {
   </div>
 </div>
 
-
-
+<div className="hero-content">
+  <a 
+    href="https://github.com/Mr-Deee" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hero-tagline-link"
+  >
+    <div className="hero-tagline">
+      <img 
+        src="/images/logo.PNG" 
+        alt="GitHub Logo"
+        className="tagline-prefix"
+      />
+      <span className="tagline-text">My GitHub</span>
+    </div>
+  </a>
+  {/* <h1 className="hero-title">Unlock your full potential</h1> */}
+</div>
 
       </section>
 
