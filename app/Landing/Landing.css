@@ -26,7 +26,8 @@
 
 .tagline-prefix {
   color: #000000;
-  font-weight: 600;
+height: 28px;
+border-radius: 12px;
 }
 
 .tagline-text {
@@ -685,6 +686,252 @@
   font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.3s ease;
+}
+
+
+/* GitHub Section */
+.github-section {
+  margin: 4rem 0;
+}
+
+.github-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.github-icon {
+  font-size: 1.8rem;
+}
+
+.github-graph {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.github-graph:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-color: #000000;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.graph-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.graph-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.legend-colors {
+  display: flex;
+  gap: 3px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.graph-container {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.month-labels {
+  display: grid;
+  grid-template-columns: repeat(52, 12px);
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.contribution-grid {
+  display: flex;
+  gap: 3px;
+}
+
+.week-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contribution-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.contribution-cell:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.cell-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-bottom: 5px;
+  z-index: 10;
+}
+
+.contribution-cell:hover .cell-tooltip {
+  opacity: 1;
+}
+
+/* Contribution intensity levels */
+.level-0 {
+  background-color: #ebedf0;
+}
+
+.level-1 {
+  background-color: #9be9a8;
+}
+
+.level-2 {
+  background-color: #40c463;
+}
+
+.level-3 {
+  background-color: #30a14e;
+}
+
+.level-4 {
+  background-color: #216e39;
+}
+
+.graph-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.stat-item .stat-label {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.graph-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .github-graph {
+    padding: 1rem;
+  }
+  
+  .contribution-cell {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .week-column {
+    gap: 2px;
+  }
+  
+  .month-labels {
+    grid-template-columns: repeat(52, 8px);
+    margin-left: 20px;
+  }
+  
+  .graph-stats {
+    gap: 1rem;
+  }
+  
+  .stat-item .stat-value {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .graph-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contribution-cell {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .week-column {
+    gap: 1px;
+  }
+  
+  .month-labels {
+    grid-template-columns: repeat(52, 6px);
+    margin-left: 15px;
+  }
 }
 
 .playstore-link:hover {
